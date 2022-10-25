@@ -1,13 +1,11 @@
 import React from 'react';
 
-
-const Courses = () => {
-    
+const Course = () => {
     return (
         <div>
-
+            single course
         </div>
     );
 };
 
-export default Courses;
+export default Course;
