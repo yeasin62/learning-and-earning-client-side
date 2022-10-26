@@ -1,13 +1,14 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './SingleCourse.css';
 
 const SingleCourse = ({course}) => {
     const {logo, image, title, description,course_id} = course;
     return (
         <Col>
           <Card>
-            <Card.Img variant="top" src={logo} className='h-100'/>
+            <Card.Img variant="top" src={logo} />
             <Card.Body>
               <Card.Title>{title}</Card.Title>
               <Card.Text>

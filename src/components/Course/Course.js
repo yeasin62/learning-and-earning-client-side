@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Image } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import './Course.css';
 
 const Course = () => {
     const coursee = useLoaderData();
@@ -11,7 +12,7 @@ const Course = () => {
       <Card.Header>{name}</Card.Header>
       <Card.Body>
         <img src={image} alt={title} className="img-fluid"/>
-        <h2>{title}</h2>
+        <h2 className='singleTitle'>{title}</h2>
         <h5>{subtitle}</h5>
         {description}
             <div className='author'>

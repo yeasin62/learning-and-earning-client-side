@@ -1,0 +1,18 @@
+.singleTitle {
+    margin:10px 0;
+    font-size: 28px;
+    font-size: bold;
+}
+.author {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.author p {
+    margin-bottom: 0;
+    background:#000;
+    color:#fff;
+    padding:5px 10px;
+}
