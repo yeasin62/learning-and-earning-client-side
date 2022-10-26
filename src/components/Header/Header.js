@@ -17,6 +17,8 @@ const Header = () => {
             <NavLink to={'/'}>Courses</NavLink>
             <NavLink to={'/faq'}>FAQ</NavLink>
             <NavLink to={'/blog'}>Blog</NavLink>
+            <NavLink to={'/login'}>Login</NavLink>
+            <NavLink to={'/signup'}>Signup</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
