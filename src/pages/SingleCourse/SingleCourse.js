@@ -3,7 +3,6 @@ import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SingleCourse = ({course}) => {
-    console.log(course);
     const {logo, image, title, description,course_id} = course;
     return (
         <Col>
@@ -13,7 +12,7 @@ const SingleCourse = ({course}) => {
               <Card.Title>{title}</Card.Title>
               <Card.Text>
                 {
-                    description.slice(0,200)+ '...'
+                    description.slice(0,120)+ '...'
                 }
               </Card.Text>
             </Card.Body>

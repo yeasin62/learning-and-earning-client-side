@@ -6,10 +6,9 @@ import SingleCourse from '../SingleCourse/SingleCourse';
 
 const Courses = () => {
     const courses = useLoaderData();
-    console.log(courses);
     return (
         <Container>
-            <Row xs={1} md={2} className="g-4">
+            <Row xs={1} md={3} className="g-4">
                 {
                     courses.map(singleCourse => <SingleCourse key={singleCourse.course_id} course={singleCourse}></SingleCourse>)
                 }
