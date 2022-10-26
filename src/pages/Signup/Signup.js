@@ -1,25 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Signup.css';
 
 const Signup = () => {
     return (
         <div className='signup'>
+            <h3 className='text-center'>Create a account</h3>
             <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+                <div class="mb-3">
+                    <label for="fullName" className="form-label">Full Name</label>
+                    <input type="text" className="form-control" id="fullName" placeholder='Full Name' required/>
+                </div>
+                <div class="mb-3">
+                    <label for="photoUrl" className="form-label">Photo URL</label>
+                    <input type="url" className="form-control" id="photoUrl" placeholder='Photo url' required/>
+                </div>
+                <div class="mb-3">
+                    <label for="email" className="form-label">Your Email</label>
+                    <input type="email" className="form-control" id="email" placeholder='Your email' required/>
+                </div>
+                <div class="mb-3">
+                    <label for="password" className="form-label">Password</label>
+                    <input type="password" className="form-control" id="password" placeholder='Password' required/>
+                </div>
+                <button type="submit" className="btn btn-primary">Signup</button>
+                </form>
+                <p className='mt-3'>Alrady have an account. <Link to={'/login'}>Login</Link></p>
         </div>
     );
 };
