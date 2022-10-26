@@ -7,7 +7,7 @@ import SingleCourse from '../SingleCourse/SingleCourse';
 const Courses = () => {
     const courses = useLoaderData();
     return (
-        <Container>
+        <Container className='mt-5'>
             <Row xs={1} md={3} className="g-4">
                 {
                     courses.map(singleCourse => <SingleCourse key={singleCourse.course_id} course={singleCourse}></SingleCourse>)

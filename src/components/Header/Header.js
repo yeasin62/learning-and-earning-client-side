@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
 
@@ -21,6 +21,8 @@ const Header = () => {
             <NavLink to={'/signup'}>Signup</NavLink>
           </Nav>
         </Navbar.Collapse>
+        <Image src=""></Image>
+        
       </Container>
     </Navbar>
     );

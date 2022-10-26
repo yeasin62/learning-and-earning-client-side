@@ -7,7 +7,7 @@ const SingleCourse = ({course}) => {
     return (
         <Col>
           <Card>
-            <Card.Img variant="top" src={logo} height="200"/>
+            <Card.Img variant="top" src={logo} className='h-100'/>
             <Card.Body>
               <Card.Title>{title}</Card.Title>
               <Card.Text>
@@ -16,8 +16,8 @@ const SingleCourse = ({course}) => {
                 }
               </Card.Text>
             </Card.Body>
-            <Link to={`/course/${course_id}`}>Course Details</Link>
-          </Card>
+                <Link to={`/course/${course_id}`} className='btn btn-info m-2 text-white'>Course Details</Link>
+          </Card> 
         </Col>
     );
 };
