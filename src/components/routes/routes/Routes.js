@@ -8,6 +8,7 @@ import FAQ from "../../../pages/FAQ/FAQ";
 import Login from "../../../pages/Login/Login";
 import Signup from "../../../pages/Signup/Signup";
 import Course from "../../Course/Course";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 
@@ -19,11 +20,11 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/all')
+                loader: () => fetch('https://gazi-learning-academy-yeasin62.vercel.app/all')
             },
             {
                 path: '/course/:id',
-                loader: ({params})=> fetch(`http://localhost:5000/course/${params.id}`),
+                loader: ({params})=> fetch(`https://gazi-learning-academy-yeasin62.vercel.app/course/${params.id}`),
                 element: <Course></Course>,
                 
             },
@@ -45,8 +46,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/course/buy/:id',
-                element: <Checkout></Checkout>,
-                loader: ({params})=> fetch(`http://localhost:5000/course/${params.id}`)
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
+                loader: ({params})=> fetch(`https://gazi-learning-academy-yeasin62.vercel.app/course/${params.id}`)
             },
             {
                 path: '*',

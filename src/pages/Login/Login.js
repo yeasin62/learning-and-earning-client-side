@@ -66,7 +66,7 @@ const Login = () => {
                 <p className='red'>{error}</p>
             <p>Don't have an account. <Link to={'/signup'}>Create Account</Link></p>
             <p className='text-center'>Or</p>
-            <Button variant="outline-success" size="lg" className='w-100 mb-3'><FaGoogle></FaGoogle> Sign in with Google</Button>
+            <Button onClick={handleGoogleSignIn} variant="outline-success" size="lg" className='w-100 mb-3'><FaGoogle></FaGoogle> Sign in with Google</Button>
             <Button variant="outline-dark" size="lg" className='w-100'><FaGithubAlt></FaGithubAlt> Sign in with Github</Button>
             
         </div>

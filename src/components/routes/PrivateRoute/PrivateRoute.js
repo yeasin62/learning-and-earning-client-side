@@ -11,9 +11,12 @@ const PrivateRoute = ({children}) => {
     if(loading){
         return <Spinner animation="grow" variant="dark" />;
     }
-    if(!user){
-        return <Navigate to={'/login'} state={{from: location}} replace></Navigate>
+    if(user && user.uid){
+        return children;
     }
+    return (
+        <Navigate to={'/login'} state={{from: location}} replace></Navigate>
+    );
 };
 
 export default PrivateRoute;

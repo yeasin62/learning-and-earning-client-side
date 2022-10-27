@@ -6,7 +6,7 @@ const LeftSideBar = () => {
     const [courses, setCourses] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/courses')
+        fetch('https://gazi-learning-academy-yeasin62.vercel.app/courses')
         .then(response => response.json())
         .then(data => setCourses(data));
     },[]);
