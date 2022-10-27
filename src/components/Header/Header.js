@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Image, Nav, Navbar, OverlayTrigger, Popover } from 'react-bootstrap';
 import { FaUserAlt } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { authContext } from '../../context/AuthProvider/AuthProvider';
@@ -14,6 +14,11 @@ const Header = () => {
     .then(()=>{})
     .catch(error => console.error(error));
   }
+  const popoverHoverFocus = (
+    <Popover id="popover-trigger-hover-focus" title="Popover bottom">
+      {user?.displayName}
+    </Popover>
+  );
 
   console.log(user);
     return (
@@ -36,19 +41,23 @@ const Header = () => {
                 <NavLink to={'/signup'}>Signup</NavLink>
               </> : 
               <>
-                <p className='text-white'>{user?.displayName}</p>
-                <Button onClick={handleLogout} variant="outline-info">Logout</Button>
+                <Button className="logout" onClick={handleLogout} variant="outline-info">Logout</Button>
               </>
               
             }
             
           </Nav>
         </Navbar.Collapse>
-        {
-          user?.photoURL ? <Image src={user.photoURL} className='profilePicture'></Image> : <FaUserAlt></FaUserAlt>
-        }
         
-
+        
+        {/* <OverlayTrigger
+      trigger={['hover', 'focus']}
+      placement="bottom"
+      overlay={popoverHoverFocus}>
+      {
+          user?.photoURL ? <Image src={user?.photoURL} className='profilePicture' ></Image> : <FaUserAlt></FaUserAlt>
+        }
+    </OverlayTrigger> */}
       </Container>
     </Navbar>
     );
