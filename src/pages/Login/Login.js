@@ -16,7 +16,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const from = location.state?.form?.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -28,12 +28,10 @@ const Login = () => {
     }
     const handleSubmitSignin = (event)=> {
         event.preventDefault();
-        console.log(event.target);
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email,password);
 
         userSignIn(email,password)
         .then(result => {

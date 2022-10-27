@@ -8,22 +8,13 @@
 1. The course/content detail section will have a heading at the top of the page. The heading will have an icon/ button on the side of the heading. When you click on that button, it will create a pdf and will be downloaded ( This will give you more fun. Try out this after completing all of your tasks. Hint: Explore react-to-pdf package). Your pdf should contain some relevant information about the course details.
 
 
-1. There will be a button at the bottom of the content detail called "Get premium access." Clicking the button will take the user to the Checkout route. This route will be a private/protected route. Please ensure that the private route redirects to the login page if the user is not logged in. After login, the user will be redirected to the checkout page.
-1. Your checkout page will be a dynamic route with route parameters having the id of the content that the user had clicked. On the checkout page, you will display the name based on the id. 
-1. Use the Environment variable to hide the firebase key.
-1. If you reload the protected/private route (after login), this page will not redirect the user to the login page. Instead, it will keep the logged-in user on the protected route.
+
 ### Bonus: 
-1. Minimum 12 meaningful git commits on the client-side repository and minimum of 5 meaningful commits on the server-side repository.
-1. Make your website mobile & desktop responsive (tablet responsive is optional).
-1. Display errors when the user's email address or password doesn't match.
+
 
 1. (client-side repo) Meaningful readme.md file containing your website name and link to your live site. And at least five bullet points mentioning your website's different features and functionality. And a list of technologies (frameworks, libraries) used in your project. (added a meaningful readme.md file for the server-side repo is optional)
 
-1. Create a 404 page.
 
-1. Make sure your site looks reasonable. The design and color selection is meaningful. 
-
-2. Clean and organized Code (folder structure). Organize components with meaningful names, and add comments when needed.
 
 
 ### Optional (But Highly Recommended):
