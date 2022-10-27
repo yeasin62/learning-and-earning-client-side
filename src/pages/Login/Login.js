@@ -5,7 +5,7 @@ import './Login.css';
 import { FaGithubAlt, FaGoogle } from 'react-icons/fa';
 import { useContext } from 'react';
 import { authContext } from '../../context/AuthProvider/AuthProvider';
-import {GoogleAuthProvider} from 'firebase/auth';
+import {GithubAuthProvider, GoogleAuthProvider} from 'firebase/auth';
 import { useState } from 'react';
 
 
@@ -13,6 +13,10 @@ const Login = () => {
     const [error,setError] = useState('');
     const {providerLogin,userSignIn} = useContext(authContext);
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
+
+
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -23,9 +27,23 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            setError('');
+            navigate(from, {replace:true});
         })
         .catch(error => console.error(error));
     }
+
+    const handleGitHubSignIn = () => {
+        providerLogin(githubProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            setError('');
+            navigate(from, {replace:true});
+        })
+        .catch(error => console.error(error));
+    }
+
     const handleSubmitSignin = (event)=> {
         event.preventDefault();
         const form = event.target;
@@ -45,6 +63,7 @@ const Login = () => {
             console.error(error);
             setError(error.message);
         });
+
     }
     
     return (
@@ -65,7 +84,7 @@ const Login = () => {
             <p>Don't have an account. <Link to={'/signup'}>Create Account</Link></p>
             <p className='text-center'>Or</p>
             <Button onClick={handleGoogleSignIn} variant="outline-success" size="lg" className='w-100 mb-3'><FaGoogle></FaGoogle> Sign in with Google</Button>
-            <Button variant="outline-dark" size="lg" className='w-100'><FaGithubAlt></FaGithubAlt> Sign in with Github</Button>
+            <Button onClick={handleGitHubSignIn} variant="outline-dark" size="lg" className='w-100'><FaGithubAlt></FaGithubAlt> Sign in with Github</Button>
             
         </div>
     );

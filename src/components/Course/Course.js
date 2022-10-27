@@ -15,18 +15,12 @@ const Course = () => {
         <Card className="text-center mt-4">
       <Card.Header> {name}</Card.Header>
       <Card.Body>
-      <FaFilePdf></FaFilePdf>
-
+      
       <Pdf targetRef={ref} filename={`${name}.pdf`}>
-        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+        {({ toPdf }) => <button onClick={toPdf}><FaFilePdf></FaFilePdf> Download Pdf</button>}
       </Pdf>
       <div ref={ref}>
         
-      
-            
-
-
-
         <h2 className='singleTitle'> {title}</h2>
         <img src={image} alt={title} className="img-fluid"/>
         

@@ -1,3 +1,22 @@
+## Website Info
+
+Website Name: Earning and Learning
+Website Link: 
+
+## Functionality
+1. Create node express js sever and called api from vercel cli server
+2. Called API from Vercel CLI server to Client site
+3. User login and registration
+4. Private Route
+5. Active Route
+6. Download PDF
+
+
+
+
+
+
+
 ## Task Description: 
 
 1. It will contain a navbar with the options: website logo, website name, Courses, FAQ, Blog, toggle theme (dark/ light), and User Profile Picture (or login). The user profile picture on the navbar is conditional. If the user is signed in, the navbar will show the profile pic. The user's name will be visible when the mouse is in the picture.
@@ -5,7 +24,6 @@
 
 
 
-1. The course/content detail section will have a heading at the top of the page. The heading will have an icon/ button on the side of the heading. When you click on that button, it will create a pdf and will be downloaded ( This will give you more fun. Try out this after completing all of your tasks. Hint: Explore react-to-pdf package). Your pdf should contain some relevant information about the course details.
 
 
 

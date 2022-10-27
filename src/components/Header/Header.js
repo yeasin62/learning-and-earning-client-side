@@ -5,6 +5,8 @@ import { FaUserAlt } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { authContext } from '../../context/AuthProvider/AuthProvider';
 import './Header.css';
+
+
 const Header = () => {
   const {user,logout} = useContext(authContext);
   const handleLogout=()=>{
