@@ -5,8 +5,12 @@
     padding:10px 15px;
 }
 .profilePicture {
-    width: 30px;
+    width: 40px;
+    border-radius:50%;
 }
 .logout {
     margin-right:15px;
+}
+.active {
+    color:#fb1b1b !important;
 }

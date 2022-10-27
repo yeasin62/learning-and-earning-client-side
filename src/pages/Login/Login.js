@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { FaGithubAlt, FaGoogle } from 'react-icons/fa';
 import { useContext } from 'react';
@@ -14,6 +14,9 @@ const Login = () => {
     const {providerLogin,userSignIn} = useContext(authContext);
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.form?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -38,7 +41,7 @@ const Login = () => {
             console.log(user);
             form.reset();
             setError('');
-            navigate('/');
+            navigate(from, {replace:true});
         })
         .catch(error => {
             console.error(error);

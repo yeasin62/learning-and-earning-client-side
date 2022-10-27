@@ -7,15 +7,15 @@ import './Signup.css';
 
 const Signup = () => {
     const [error,setError] = useState('');
-    const {createUser} = useContext(authContext);
+    const {createUser, updateUserProfile} = useContext(authContext);
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
-        const photo = form.photoUrl.value;
+        const name = form.fname.value;
+        const photoURL = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name,photo,email,password);
+        console.log(name,photoURL,email,password);
 
         createUser(email,password)
         .then(result => {
@@ -23,12 +23,22 @@ const Signup = () => {
             console.log(user);
             setError('');
             form.reset();
+            handleUpdateUserProfile(name,photoURL)
+            
         })
         .catch(error => {
             console.error(error);
             setError(error.message);
         });
-
+        const handleUpdateUserProfile = (name,photoURL)=> {
+            const profile = {
+                name: name,
+                photoURL: photoURL
+            }
+            updateUserProfile(profile)
+            .then(()=>{})
+            .catch(error=>console.error(error));
+        }
     }
     return (
         <div className='signup'>
@@ -36,7 +46,7 @@ const Signup = () => {
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="fullName" className="form-label">Full Name</label>
-                    <input type="text" name="name" className="form-control" id="fullName" placeholder='Full Name' required/>
+                    <input type="text" name="fname" className="form-control" id="fullName" placeholder='Full Name' required/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="photoUrl" className="form-label">Photo URL</label>

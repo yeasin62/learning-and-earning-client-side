@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button, Card, Image } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import './Course.css';
 
 const Course = () => {
     const coursee = useLoaderData();
     console.log(coursee);
-    const {title,subtitle,Instructor,description,image,logo,rating,total_purchased,name} = coursee;
+    const {title,subtitle,Instructor,description,image,rating,total_purchased,name,course_id} = coursee;
     return (
         <Card className="text-center mt-4">
       <Card.Header>{name}</Card.Header>
@@ -19,6 +19,9 @@ const Course = () => {
                 <p>Instructor: {Instructor}</p>
                 <p>Rating: {rating}</p>
                 <p>Enrolled: {total_purchased} Students</p>
+            </div>
+            <div className='mt-4'>
+              <Link to={`/course/buy/${course_id}`}>Get premium access</Link>
             </div>
       </Card.Body>
     </Card>

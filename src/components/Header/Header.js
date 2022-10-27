@@ -5,10 +5,8 @@ import { FaUserAlt } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { authContext } from '../../context/AuthProvider/AuthProvider';
 import './Header.css';
-
 const Header = () => {
   const {user,logout} = useContext(authContext);
-
   const handleLogout=()=>{
     logout()
     .then(()=>{})
@@ -19,8 +17,8 @@ const Header = () => {
       {user?.displayName}
     </Popover>
   );
+  
 
-  console.log(user);
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -50,14 +48,17 @@ const Header = () => {
         </Navbar.Collapse>
         
         
-        {/* <OverlayTrigger
-      trigger={['hover', 'focus']}
-      placement="bottom"
-      overlay={popoverHoverFocus}>
-      {
-          user?.photoURL ? <Image src={user?.photoURL} className='profilePicture' ></Image> : <FaUserAlt></FaUserAlt>
+      <OverlayTrigger
+        trigger={['hover', 'focus']}
+        placement="bottom"
+        overlay={popoverHoverFocus}>
+        {
+            user?.photoURL ? <Image src={user?.photoURL} className='profilePicture' ></Image> : <FaUserAlt></FaUserAlt>
         }
-    </OverlayTrigger> */}
+    </OverlayTrigger>
+
+    
+
       </Container>
     </Navbar>
     );
